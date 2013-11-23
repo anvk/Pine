@@ -1,0 +1,32 @@
+{
+  "name": "WebMNode",
+  "version": "0.1.0",
+  "description": "Project target of which is a developer friendly and easy to use boilerplate for creating RESTful webservices using Node.JS + MSSQL Database.",
+  "contributors": [
+    {
+      "name": "Alexey Novak",
+      "email": "alexey.novak.mail@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:anvk/WebMNode.git"
+  },
+  "keywords": [
+    "web",
+    "js",
+    "webservice",
+    "rest"
+  ],
+  "dependencies": {
+    "lodash-node": "2.3.0",
+    "express":  ">=3.4.4",
+    "node.extend": "1.0.8",
+    "mssql": "0.3.4"
+  },
+  "engine": {
+    "node": ">=0.10"
+  },
+  "main": "main",
+  "license": "MIT"
+}
