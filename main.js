@@ -1,1 +1,1 @@
-require('./lib/webservice');
+require('./lib/my_webservice');

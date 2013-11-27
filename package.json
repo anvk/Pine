@@ -1,5 +1,5 @@
 {
-  "name": "WebMNode",
+  "name": "Pine",
   "version": "0.1.0",
   "description": "Project target of which is a developer friendly and easy to use boilerplate for creating RESTful webservices using Node.JS + MSSQL Database.",
   "contributors": [
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:anvk/WebMNode.git"
+    "url": "git@github.com:anvk/Pine.git"
   },
   "keywords": [
     "web",
