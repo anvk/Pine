@@ -19,14 +19,12 @@
     "rest"
   ],
   "dependencies": {
-    "lodash-node": "2.3.0",
-    "express":  ">=3.4.4",
-    "node.extend": "1.0.8",
+    "lodash-node": "2.3.x",
+    "express":  "3.4.x",
+    "node.extend": "1.0.x",
     "mssql": "0.3.4"
   },
-  "engine": {
-    "node": ">=0.10"
-  },
+  "engine": "node >= 0.10.x",
   "main": "main",
   "license": "MIT"
 }
