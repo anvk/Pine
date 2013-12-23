@@ -21,18 +21,18 @@ Navigate to [http://localhost:3000] to see your running webservice
 
 ### Options
 
-**routes** - array of Route objects. Please refer to the documentation below for further details.  
-**port** - webservice port  
-**verbose** - print extra logging messages if true  
+**routes** - array of route objects. Please refer to the documentation below for further details.  
+**port** - port where for the webservice  
+**verbose** - there will extra logging messages printed if true  
 **processRequest** - callback which will be executed for every webservice request. Please refer to the documentation below for further details.  
 
 #### Route object
 
-> Object in an array of routes which will be used in Pine to generate your webservice. This object can consist of any extra variables you need to process in `proccessRequest()` callback. But it must contain the following parameters:
+> Object which sets route rules(URLs) for the webservice. Its properties are described below. NOTE: extra properties could be specified and used in `proccessRequest()` callback
 
-**url** - url for your webservice. (e.g. you need `http://localhost:3000/customers/:customerid/properties` then your url must be `customers/:customerid/properties`)  
+**url** - url for a route (e.g. `http://localhost:3000/customers/:customerid/properties` then your url must be `customers/:customerid/properties`)  
 **method** - get/post/put/patch/delete  
-**argMap** - an object which contains mapping of argument which came from URL, Body or Query URL. This object with extracted values will be passed into your `processRequest()` callback. If you have the following URL `POST http://localhost:3000/customers/:customerid/properties?name=[name]` with body `{ "value": "myval" }` then your argMap would be the following:  
+**argMap** - an object which contains mapping for arguments which came from URL, Body or Query URL. Example: If you have the following URL `POST http://localhost:3000/customers/:customerid/properties?name=[name]` with body `{ "value": "myval" }` then your argMap will be the following:  
 
 ```javascript
 argMap: {
@@ -46,8 +46,8 @@ argMap: {
 
 > Callback which will be called for every route which got executed. Params consist of the following objects:
 
-**args** - object which consist of arguments which came from the route.  
-**res** - Express response object. You might want to call `res.send()` within your processRequest callback.  
+**args** - object which contains resolved variables from route's argMap 
+**res** - Express response object. NOTE: you need to call `res.send(data)` within your `processRequest()` callback to send JSON back to the user.  
 **req** - Express request object.  
 **route** - Route object which got executed.  
 
