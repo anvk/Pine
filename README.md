@@ -28,11 +28,11 @@ Navigate to [http://localhost:3000] to see your running webservice
 
 #### Route object
 
-> Object which sets route rules(URLs) for the webservice. Its properties are described below. NOTE: extra properties could be specified and used in `proccessRequest()` callback
+> Object which sets route rules(URLs) for the webservice. Its properties are described below. NOTE: extra properties could be specified and accessed through `params.route` in proccessRequest callback
 
 **url** - url for a route (e.g. `http://localhost:3000/customers/:customerid/properties` then your url must be `customers/:customerid/properties`)  
 **method** - get/post/put/patch/delete  
-**argMap** - an object which contains mapping for arguments which came from URL, Body or Query URL. Example: If you have the following URL `POST http://localhost:3000/customers/:customerid/properties?name=[name]` with body `{ "value": "myval" }` then your argMap will be the following:  
+**argMap** - an object which contains mapping for arguments which were passed in URL, Body or Query URL. Example: If you need to process `POST http://localhost:3000/customers/:customerid/properties?name=[name]` with body `{ "value": "myval" }` then your argMap will be the following:  
 
 ```javascript
 argMap: {
@@ -44,12 +44,12 @@ argMap: {
 
 #### processRequest(params)
 
-> Callback which will be called for every route which got executed. Params consist of the following objects:
+> Callback for every route which got executed. Params consist of the following objects:
 
 **args** - object which contains resolved variables from route's argMap 
 **res** - Express response object. NOTE: you need to call `res.send(data)` within your `processRequest()` callback to send JSON back to the user.  
 **req** - Express request object.  
-**route** - Route object which got executed.  
+**route** - Route object which got executed. NOTE: all extra properties will be in this object  
 
 ### Widget default options
 
