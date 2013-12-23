@@ -1,27 +1,66 @@
 Pine.js a Node project
 ========
 
-Project target of which is a developer friendly and easy to use boilerplate for creating RESTful webservices using Node.JS + MSSQL Database.
-
-Work in progress.......
+> Project target of which is a developer friendly and easy configurable to use RESTful webservices using Node.JS. Create more by coding less!
 
 ### Prerequisites
 
 Node + NPM
 
-My dataLayer [NMDB](https://github.com/anvk/NMDB) module
-
 ```
 $ npm install
 ```
 
-### To start webservice
+### To start a webservice example
 
 ```
 $ node main
 ```
 
-Navigate to http://localhost:3000
+Navigate to [http://localhost:3000] to see your running webservice
+
+### Options
+
+**routes** - array of Route objects. Please refer to the documentation below for further details.  
+**port** - webservice port  
+**verbose** - print extra logging messages if true  
+**processRequest** - callback which will be executed for every webservice request. Please refer to the documentation below for further details.  
+
+#### Route object
+
+> Object in an array of routes which will be used in Pine to generate your webservice. This object can consist of any extra variables you need to process in `proccessRequest()` callback. But it must contain the following parameters:
+
+**url** - url for your webservice. (e.g. you need `http://localhost:3000/customers/:customerid/properties` then your url must be `customers/:customerid/properties`)  
+**method** - get/post/put/patch/delete  
+**argMap** - an object which contains mapping of argument which came from URL, Body or Query URL. This object with extracted values will be passed into your `processRequest()` callback. If you have the following URL `POST http://localhost:3000/customers/:customerid/properties?name=[name]` with body `{ "value": "myval" }` then your argMap would be the following:  
+
+```javascript
+argMap: {
+  customerid: 'params.customerid',
+  propertyName: 'query.name',
+  propertyValue: 'body.value'
+}
+```
+
+#### processRequest(params)
+
+> Callback which will be called for every route which got executed. Params consist of the following objects:
+
+**args** - object which consist of arguments which came from the route.  
+**res** - Express response object. You might want to call `res.send()` within your processRequest callback.  
+**req** - Express request object.  
+**route** - Route object which got executed.  
+
+### Widget default options
+
+```javascript
+var defaults = {
+  routes: [],
+  port: 3000,
+  verbose: false,
+  processRequest: undefined
+};
+```
 
 ## License
 The MIT License (MIT)

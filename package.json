@@ -1,6 +1,6 @@
 {
   "name": "Pine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Project target of which is a developer friendly and easy to use boilerplate for creating RESTful webservices using Node.JS + MSSQL Database.",
   "contributors": [
     {
@@ -21,8 +21,7 @@
   "dependencies": {
     "lodash-node": "2.3.x",
     "express":  "3.4.x",
-    "node.extend": "1.0.x",
-    "mssql": "0.3.4"
+    "node.extend": "1.0.x"
   },
   "engine": "node >= 0.10.x",
   "main": "main",

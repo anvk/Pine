@@ -1,1 +1,1 @@
-require('./lib/my_webservice');
+require('./lib/pine_example');
