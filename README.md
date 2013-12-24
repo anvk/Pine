@@ -1,4 +1,4 @@
-Pine.js a Node project
+Pine.js
 ========
 
 > Project target of which is a developer friendly and easy configurable to use RESTful webservices using Node.JS. Create more by coding less!
@@ -30,15 +30,23 @@ Navigate to [http://localhost:3000] to see your running webservice
 
 > Object which sets route rules(URLs) for the webservice. Its properties are described below. NOTE: extra properties could be specified and accessed through `params.route` in proccessRequest callback
 
-**url** - url for a route (e.g. `http://localhost:3000/customers/:customerid/properties` then your url must be `customers/:customerid/properties`)  
+**url** - url for a route 
 **method** - get/post/put/patch/delete  
-**argMap** - an object which contains mapping for arguments which were passed in URL, Body or Query URL. Example: If you need to process `POST http://localhost:3000/customers/:customerid/properties?name=[name]` with body `{ "value": "myval" }` then your argMap will be the following:  
+**argMap** - an object which contains mapping for arguments which were passed in URL, Body or Query URL.  
+
+##### Example
+
+f you need to process `POST http://localhost:3000/customers/:customerid/properties?name=[name]` with body `{ "value": "myval" }` then your route object will be the following:
 
 ```javascript
-argMap: {
-  customerid: 'params.customerid',
-  propertyName: 'query.name',
-  propertyValue: 'body.value'
+{
+  url: 'customers/:customerid/properties',
+  method: 'post',
+  argMap: {
+    customerid: 'params.customerid',
+    propertyName: 'query.name',
+    propertyValue: 'body.value'
+  }
 }
 ```
 
