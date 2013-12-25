@@ -11,30 +11,30 @@ Node + NPM
 $ npm install
 ```
 
-### To start a webservice example
+### Example of pine web service
 
 ```
 $ node main
 ```
 
-Navigate to [http://localhost:3000] to see your running webservice
+Navigate to [http://localhost:3000](http://localhost:3000) to see your running web service
 
 ### Options
 
 **routes** - array of route objects. Please refer to the documentation below for further details.  
-**port** - port where for the webservice  
+**port** - port where for the web service  
 **verbose** - there will extra logging messages printed if true  
-**processRequest** - callback which will be executed for every webservice request. Please refer to the documentation below for further details.  
+**processRequest** - callback which will be executed for every web service request. Please refer to the documentation below for further details.  
 
 #### Route object
 
-> Object which sets route rules(URLs) for the webservice. Its properties are described below. NOTE: extra properties could be specified and accessed through `params.route` in proccessRequest callback
+> Object which sets route rules(URLs) for the web service. Its properties are described below. NOTE: extra properties could be specified and accessed through _params.route_ in _proccessRequest()_ callback
 
 **url** - url for a route  
 **method** - get/post/put/patch/delete  
 **argMap** - an object which contains mapping for arguments which were passed in URL, Body or Query URL.  
 
-##### Example
+#### Route example
 
 f you need to process _POST http://localhost:3000/customers/:customerid/properties?name=[name]_ with body _{ "value": "myval" }_ then your route object will be the following:
 
@@ -54,7 +54,7 @@ f you need to process _POST http://localhost:3000/customers/:customerid/properti
 
 > Callback for every route which got executed. Params consist of the following objects:
 
-**args** - object which contains resolved variables from route's argMap 
+**args** - object which contains resolved variables from route's argMap  
 **res** - Express response object. NOTE: you need to call _res.send(data)_ within your _processRequest()_ callback to send JSON back to the user.  
 **req** - Express request object.  
 **route** - Route object which got executed. NOTE: all extra properties will be in this object  
