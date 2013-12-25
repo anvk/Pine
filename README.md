@@ -40,7 +40,7 @@ f you need to process _POST http://localhost:3000/customers/:customerid/properti
 
 ```javascript
 {
-  url: 'customers/:customerid/properties',
+  url: '/customers/:customerid/properties',
   method: 'post',
   argMap: {
     customerid: 'params.customerid',
