@@ -31,7 +31,7 @@ Navigate to [http://localhost:3000](http://localhost:3000) to see your running w
 > Object which sets route rules(URLs) for the web service. Its properties are described below. NOTE: extra properties could be specified and accessed through _params.route_ in _proccessRequest()_ callback
 
 **url** - url for a route  
-**method** - get/post/put/patch/delete  
+**method** - GET/POST/PUT/PATCH/DELETE. NOTE: by default value is GET
 **argMap** - an object which contains mapping for arguments which were passed in URL, Body or Query URL.  
 
 #### Route example
