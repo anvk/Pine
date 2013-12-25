@@ -55,7 +55,7 @@ f you need to process _POST http://localhost:3000/customers/:customerid/properti
 > Callback for every route which got executed. Params consist of the following objects:
 
 **args** - object which contains resolved variables from route's argMap  
-**res** - Express response object. NOTE: you need to call _res.send(data)_ within your _processRequest()_ callback to send JSON back to the user.  
+**res** - Express response object. NOTE: you need to call _res.send(data)_ within your _processRequest()_ callback to send JSON back to a client.  
 **req** - Express request object.  
 **route** - Route object which got executed. NOTE: all extra properties will be in this object  
 
