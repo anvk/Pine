@@ -1,6 +1,6 @@
 {
   "name": "Pine",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Project target of which is a developer friendly and easy to use boilerplate for creating RESTful webservices using Node.JS + MSSQL Database.",
   "contributors": [
     {
