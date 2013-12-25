@@ -30,13 +30,13 @@ Navigate to [http://localhost:3000] to see your running webservice
 
 > Object which sets route rules(URLs) for the webservice. Its properties are described below. NOTE: extra properties could be specified and accessed through `params.route` in proccessRequest callback
 
-**url** - url for a route 
+**url** - url for a route  
 **method** - get/post/put/patch/delete  
 **argMap** - an object which contains mapping for arguments which were passed in URL, Body or Query URL.  
 
 ##### Example
 
-f you need to process `POST http://localhost:3000/customers/:customerid/properties?name=[name]` with body `{ "value": "myval" }` then your route object will be the following:
+f you need to process _POST http://localhost:3000/customers/:customerid/properties?name=[name]_ with body _{ "value": "myval" }_ then your route object will be the following:
 
 ```javascript
 {
@@ -55,7 +55,7 @@ f you need to process `POST http://localhost:3000/customers/:customerid/properti
 > Callback for every route which got executed. Params consist of the following objects:
 
 **args** - object which contains resolved variables from route's argMap 
-**res** - Express response object. NOTE: you need to call `res.send(data)` within your `processRequest()` callback to send JSON back to the user.  
+**res** - Express response object. NOTE: you need to call _res.send(data)_ within your _processRequest()_ callback to send JSON back to the user.  
 **req** - Express request object.  
 **route** - Route object which got executed. NOTE: all extra properties will be in this object  
 
