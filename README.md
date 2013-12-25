@@ -36,7 +36,7 @@ Navigate to [http://localhost:3000](http://localhost:3000) to see your running w
 
 #### Route example
 
-f you need to process _POST http://localhost:3000/customers/:customerid/properties?name=[name]_ with body _{ "value": "myval" }_ then your route object will be the following:
+If you need to process _POST http://localhost:3000/customers/:customerid/properties?name=[name]_ with body _{ "value": "myval" }_ then your route object will be the following:
 
 ```javascript
 {
