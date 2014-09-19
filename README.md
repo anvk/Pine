@@ -1,4 +1,4 @@
-Pine.js
+Pine.js v0.3.1
 ========
 
 > Project target of which is a developer friendly and easy configurable to use RESTful webservices using Node.JS. Create more by coding less!
@@ -24,7 +24,7 @@ Navigate to [http://localhost:3000](http://localhost:3000) to see your running w
 **routes** - array of route objects. Please refer to the documentation below for further details.  
 **port** - port where for the web service  
 **verbose** - there will extra logging messages printed if true  
-**processRequest** - callback which will be executed for every web service request. Please refer to the documentation below for further details.  
+**defaultCallback** - callback which will be executed by default for every web service request. Please refer to the documentation below for further details.  
 
 #### Route object
 
@@ -33,6 +33,7 @@ Navigate to [http://localhost:3000](http://localhost:3000) to see your running w
 **url** - url for a route  
 **method** - GET/POST/PUT/PATCH/DELETE. NOTE: by default method will be set to GET for a route  
 **argMap** - an object which contains mapping for arguments which were passed in URL, Body or Query URL.  
+**callback** - callback which will be executed upon request. Argument is an object consisting of req, res and args built by using argMap.  
 
 #### Route example
 
@@ -57,7 +58,6 @@ If you need to process _POST http://localhost:3000/customers/:customerid/propert
 **args** - object which contains resolved variables from route's argMap  
 **res** - Express response object. NOTE: you need to call _res.send(data)_ within your _processRequest()_ callback to send JSON back to a client.  
 **req** - Express request object.  
-**route** - Route object which got executed. NOTE: all extra properties will be in this object  
 
 ### Widget default options
 
@@ -69,6 +69,13 @@ var defaults = {
   processRequest: undefined
 };
 ```
+
+## Release History
+
+* 2014-09-18   v0.3.1   Getting rid of lo-dash. Using prototypal pattern. Every route can have its own callback to execute. Refactored code.  
+* 2013-12-25   v0.2.0   Major rewrite.  
+* 2013-12-23   v0.1.1   Refactoring Pine to be a more generic library.  
+* 2013-11-23   v0.1.0   First working version.  
 
 ## License
 The MIT License (MIT)
